@@ -5,6 +5,14 @@ hotato
 
 Hotato attempts to provide a solution for the problem of having to restart your program and having to wait until your code gets to the point where the file you made changes to gets tested. **This is strictly meant for development, never use this in your production code!**
 
+Uses the [keypress](https://github.com/TooTallNate/keypress) module for input awaiting. Hotato runs this code as soon as it gets `require()`d, so make sure this won't affect your code before using this module:
+
+```js
+keypress(process.stdin)
+process.stdin.setRawMode(true)
+process.stdin.resume()
+```
+
 ```js
 import hotato from 'hotato'
 
