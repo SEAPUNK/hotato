@@ -69,7 +69,6 @@ Make changes and fixes to your `process-stuff.js` file, and...
 [hotato] Re-running loop.
 [hotato] Running loop with reloaded modules: [ '/home/ivan/code/__/playground/process-stuff.js',
   '/home/ivan/code/__/playground/do-thing.js' ]
-[Function]
 doing thing
 [hotato] Look up OK, with returned value: { nice: 5 }
 [hotato] Awaiting input. Press "r" to re-run loop, or any other key to continue.
