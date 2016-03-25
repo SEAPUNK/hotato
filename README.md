@@ -6,7 +6,7 @@ hotato
 
 **requires node v4 or newer**
 
-Hotato attempts to provide a solution for the problem of having to restart your program and having to wait until your code gets to the point where the file you made changes to gets tested. **This is strictly meant for development, never use this in your production code!**
+Hotato attempts to provide a solution for the problem of having to restart your program and having to wait until your code gets to the point where the file you made changes to gets tested. **This is strictly meant for development, never use this in your production code!** (although [that could change in later versions](https://github.com/SEAPUNK/hotato/issues/2))
 
 Uses the [keypress](https://github.com/TooTallNate/keypress) module for input awaiting. Hotato runs this code on the tty ReadStream, so make sure this won't affect your code before using this module:
 
