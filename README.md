@@ -13,6 +13,11 @@ process.stdin.setRawMode(true)
 process.stdin.resume()
 ```
 
+---
+
+Example
+---
+
 ```js
 import hotato from 'hotato'
 
