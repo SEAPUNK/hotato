@@ -1,6 +1,9 @@
 hotato
 ===
 
+[![npm](https://img.shields.io/npm/v/hotato.svg?style=flat-square)](https://npmjs.com/package/hotato)
+[![standard code style](https://img.shields.io/badge/style-standard-blue.svg?style=flat-square)](https://github.com/feross/standard)
+
 **requires node v4 or newer**
 
 Hotato attempts to provide a solution for the problem of having to restart your program and having to wait until your code gets to the point where the file you made changes to gets tested. **This is strictly meant for development, never use this in your production code!**
@@ -28,10 +31,8 @@ import hotato from 'hotato'
 
 async function doThings () {
     const stuff = await downloadSomething()
-    const hotModules = ['./process-stuff', './do-thing'].map((name) =>
-require.resolve(name))
-    const number = await hotato(hotModules, async (processStuff,
-doThing) => {
+    const hotModules = ['./process-stuff', './do-thing'].map((name) => require.resolve(name))
+    const number = await hotato(hotModules, async (processStuff, doThing) => {
         console.log(processStuff)
         const thing = await processStuff(stuff)
         doThing(thing)
