@@ -1,6 +1,6 @@
 {
   "name": "hotato",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Developer tool for hot module reloading and snippet rerunning.",
   "main": "lib/index.js",
   "scripts": {
