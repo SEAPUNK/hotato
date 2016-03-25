@@ -5,11 +5,11 @@ hotato
 
 Hotato attempts to provide a solution for the problem of having to restart your program and having to wait until your code gets to the point where the file you made changes to gets tested. **This is strictly meant for development, never use this in your production code!**
 
-Uses the [keypress](https://github.com/TooTallNate/keypress) module for input awaiting. Hotato runs this code as soon as it gets `require()`d, so make sure this won't affect your code before using this module:
+Uses the [keypress](https://github.com/TooTallNate/keypress) module for input awaiting. Hotato runs this code on the tty ReadStream, so make sure this won't affect your code before using this module:
 
 ```js
+// As soon as it gets require()d
 keypress(process.stdin)
-process.stdin.setRawMode(true)
 
 // When awaiting input:
 process.stdin.resume()
@@ -28,14 +28,18 @@ import hotato from 'hotato'
 
 async function doThings () {
     const stuff = await downloadSomething()
-    const hotModules = ['./process-stuff', './do-thing'].map((name) => require.resolve(name))
-    const number = await hotato(hotModules, async (processStuff, doThing) => {
+    const hotModules = ['./process-stuff', './do-thing'].map((name) =>
+require.resolve(name))
+    const number = await hotato(hotModules, async (processStuff,
+doThing) => {
+        console.log(processStuff)
         const thing = await processStuff(stuff)
         doThing(thing)
         return {nice: 5}
     })
     console.log(`got number: ${number.nice}`)
 }
+
 ```
 
 *in the console*
@@ -43,10 +47,16 @@ async function doThings () {
 ```
 $ node hotato-example.js
 downloading stuff
-[hotato] Running loop with reloaded modules: './process-stuff', './do-thing'
-processing stuff
+[hotato] Running loop with reloaded modules: [ '/home/ivan/code/__/playground/process-stuff.js',
+  '/home/ivan/code/__/playground/do-thing.js' ]
+[Function]
 [hotato] Loop rejected: Error: could not process stuff
-    at processStuff (hotato-example.js:260:27)
+    at process-stuff.js:4:12
+    at module.exports (process-stuff.js:2:10)
+    at test-hotato.js:18:29
+    at test-hotato.js:11:16
+    at Function.<anonymous> (test-hotato.js:15:45)
+    at test-hotato.js:15:26
 [hotato] Awaiting input. Press "r" to re-run loop, or any other key to continue.
 [hotato> 
 ```
@@ -56,11 +66,13 @@ Make changes and fixes to your `process-stuff.js` file, and...
 ```
 [hotato> r
 [hotato] Re-running loop.
-processing stuff
+[hotato] Running loop with reloaded modules: [ '/home/ivan/code/__/playground/process-stuff.js',
+  '/home/ivan/code/__/playground/do-thing.js' ]
+[Function]
 doing thing
-[hotato] Loop run OK, with returned value: { nice: 5 }
+[hotato] Look up OK, with returned value: { nice: 5 }
 [hotato] Awaiting input. Press "r" to re-run loop, or any other key to continue.
-[hotato> c
+[hotato> 
 got number: 5
 ```
 
