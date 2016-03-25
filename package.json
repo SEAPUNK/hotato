@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/seapunk/hotato/issues"
   },
-  "homepage": "https://github.com/seapunk/hotato#readme"
+  "homepage": "https://github.com/seapunk/hotato#readme",
+  "dependencies": {
+    "bluebird": "^3.3.4"
+  }
 }

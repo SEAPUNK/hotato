@@ -56,3 +56,12 @@ got number: 5
 Uncache and then `require()` the array of resolved names, and pass them to the loop function. Once the loop function is done, regardless of its resolution or rejection, hotato will await your input, which will be to either continue (rejects its own Promise if the loop function rejected or resolves its own Promise if the loop function resolved), or re-run the loop, in which the modules get uncached and required again, with the loop function being called with the modules as arguments.
 
 Returns a Promise, which rejects or resolves however the loop function rejects or resolves on its last run.
+
+---
+
+Caveats
+---
+
+* You probably don't want to run multiple hotato functions simultaneously, due to duplicate keyboard input listeners.
+* Hotato could mess with your code, if it listens for keyboard input.
+* You might not see the prompt in time if your code logs to console other things after the loop finished its run.
