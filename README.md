@@ -3,7 +3,7 @@ hotato
 
 **requires node v4 or newer**
 
-Hotato attempts to provide a solution for the problem of not having to restart your program and having to wait until your code gets to the point where the file you made changes to gets tested.
+Hotato attempts to provide a solution for the problem of having to restart your program and having to wait until your code gets to the point where the file you made changes to gets tested.
 
 ```js
 import hotato from 'hotato'
