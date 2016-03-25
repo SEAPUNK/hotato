@@ -50,7 +50,6 @@ $ node hotato-example.js
 downloading stuff
 [hotato] Running loop with reloaded modules: [ '/home/ivan/code/__/playground/process-stuff.js',
   '/home/ivan/code/__/playground/do-thing.js' ]
-[Function]
 [hotato] Loop rejected: Error: could not process stuff
     at process-stuff.js:4:12
     at module.exports (process-stuff.js:2:10)
