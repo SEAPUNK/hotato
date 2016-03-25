@@ -59,9 +59,10 @@ Returns a Promise, which rejects or resolves however the loop function rejects o
 
 ---
 
-Caveats
+Possible caveats
 ---
 
 * You probably don't want to run multiple hotato functions simultaneously, due to duplicate keyboard input listeners.
 * Hotato could mess with your code, if it listens for keyboard input.
+* Hotato could mess with your code, if the modules you want to recache store internal state (especially if they store crucial state before you run hotato).
 * You might not see the prompt in time if your code logs to console other things after the loop finished its run.
