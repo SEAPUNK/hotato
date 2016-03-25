@@ -1,0 +1,27 @@
+{
+  "name": "hotato",
+  "version": "0.0.0",
+  "description": "Developer tool for hot module reloading and snippet rerunning.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/seapunk/hotato.git"
+  },
+  "keywords": [
+    "breakpoint",
+    "debugging",
+    "debug",
+    "hot",
+    "reload",
+    "module"
+  ],
+  "author": "Ivan K <ivan@sq10.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seapunk/hotato/issues"
+  },
+  "homepage": "https://github.com/seapunk/hotato#readme"
+}
