@@ -10,7 +10,12 @@ Uses the [keypress](https://github.com/TooTallNate/keypress) module for input aw
 ```js
 keypress(process.stdin)
 process.stdin.setRawMode(true)
+
+// When awaiting input:
 process.stdin.resume()
+
+// When received input:
+process.stdin.pause()
 ```
 
 ---
@@ -42,7 +47,7 @@ downloading stuff
 processing stuff
 [hotato] Loop rejected: Error: could not process stuff
     at processStuff (hotato-example.js:260:27)
-[hotato] Awaiting input. Press "c" to continue, or "r" to re-run loop.
+[hotato] Awaiting input. Press "r" to re-run loop, or any other key to continue.
 [hotato> 
 ```
 
@@ -54,7 +59,7 @@ Make changes and fixes to your `process-stuff.js` file, and...
 processing stuff
 doing thing
 [hotato] Loop run OK, with returned value: { nice: 5 }
-[hotato] Awaiting input. Press "c" to continue, or "r" to re-run loop.
+[hotato] Awaiting input. Press "r" to re-run loop, or any other key to continue.
 [hotato> c
 got number: 5
 ```
