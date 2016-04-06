@@ -57,8 +57,8 @@ downloading stuff
     at test-hotato.js:11:16
     at Function.<anonymous> (test-hotato.js:15:45)
     at test-hotato.js:15:26
-[hotato] Awaiting input. Enter "r" to re-run loop, or anything else to continue.
-[hotato> 
+[hotato] Awaiting input. Enter "r" to re-run loop, or "c" to continue.
+[hotato>
 ```
 
 Make changes and fixes to your `process-stuff.js` file, and...
@@ -70,8 +70,8 @@ Make changes and fixes to your `process-stuff.js` file, and...
   '/home/ivan/code/__/playground/do-thing.js' ]
 doing thing
 [hotato] Loop run OK, with returned value: { nice: 5 }
-[hotato] Awaiting input. Enter "r" to re-run loop, or anything else to continue.
-[hotato> 
+[hotato] Awaiting input. Enter "r" to re-run loop, or "c" to continue.
+[hotato> c
 got number: 5
 ```
 
