@@ -1,6 +1,8 @@
 hotato
 ===
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/SEAPUNK/hotato.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/hotato.svg?style=flat-square)](https://npmjs.com/package/hotato)
 [![standard code style](https://img.shields.io/badge/style-standard-blue.svg?style=flat-square)](https://github.com/feross/standard)
 
